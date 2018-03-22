@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>剩余字数检测</title>
+	<script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<span>你还可以输入<strong style="color:red">140</strong>个字</span>
+<p>限制用户的输入字符数，并保留规则内的字符</p>
+<script type="text/javascript">
+	// 最大长度
+	var maxLength = 140;
+	$('textarea').keyup(function(){
+		// 获取文本域的值长度
+		var l = $(this).val().length;
+		// 提示剩余字符：最大长度减去，文本内的实际长度
+		$('strong').text(maxLength - l);
+		// 剩余长度小于 0 时
+		if (parseInt($('strong').text()) < 0) {
+			// 剩余值提示0，避免负数出现
+			$('strong').text('0');
+			// 截取文本域中 0~140 字符，存入变量。
+			var val = $(this).val().substring(0,140);// substr()  不推荐使用
+			// 截取的内容填充文本域
+			/* 无论用户输入多长，也只有限定字符会被填充进来。*/
+			$(this).val(val);
+		};
+	});
+</script>
+</body>
+</html>

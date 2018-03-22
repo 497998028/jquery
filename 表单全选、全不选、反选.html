@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<div id="checkbox">
+		<input type="checkbox" id="" name="" checked="checked" />吃
+		<input type="checkbox" id="" name="" />喝
+		<input type="checkbox" id="" name="" />玩
+		<input type="checkbox" id="" name="" />乐
+	</div>
+	<div id="btn">
+		<input type="button" id="chkAll" value="全选" />
+		<input type="button" id="chkNone" value="全不选" />
+		<input type="button" id="chkReverse" value="反选" />
+	</div>
+
+
+<script type="text/javascript">
+$(function(){
+	var chkAll = $('#chkAll');
+	var chkNone		= $('#chkNone');
+	var chkReverse	= $('#chkReverse');
+	var checkbox	= $('#checkbox>:checkbox'); // 查找子元素中type是checkbox的元素，>表示子查找子元素
+
+	// 全选
+	chkAll.click(function(){
+		checkbox.attr('checked',true);
+	});
+	// 全不选
+	chkNone.click(function(){
+		checkbox.removeAttr('checked',false);
+	});
+	// 反选
+	chkReverse.click(function(){
+		// 遍历每一个？falst
+		checkbox.each(function(){
+			//!$(this).attr('checked') 获取元素值，取反。（真就变假、假就变真）
+			$(this).prop('checked', !$(this).prop('checked')); //1.7以上版本，prop比attr好用。
+		});
+	});
+});
+
+</script>
+</body>
+</html>

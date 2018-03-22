@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>原生js的tab标签页</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			margin: 50px 200px;
+			display: block;
+		}
+		ul{
+			list-style-type: none;
+		}
+		#ul{
+			height: 30px;
+			margin-bottom: 10px;
+		}
+		#ul li{
+			/*height: 30px;*/
+			line-height: 30px;
+			padding: 0 15px;
+			border: 1px solid #abcdef;
+			float: left;
+			margin-right: 3px;
+			cursor: pointer;
+		}
+		#ul li.current{
+			background: #abcdef;
+		}
+		#content div{
+			width: 300px;
+			height: 200px;
+			border: 1px solid #abcdef;
+			display: none;
+		}
+		#content div.show{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<ul id="ul">
+		<li class="current">php</li>
+		<li>jquery</li>
+		<li>html</li>
+	</ul>
+	<div id="content">
+		<div class="show">php。。。。。。介绍</div>
+		<div>jQuery。。。。。。介绍</div>
+		<div>html。。。。。。介绍</div>
+	</div>
+
+<script>
+	var ul = document.getElementById('ul');
+	var li = ul.getElementsByTagName('li');
+	var content = document.getElementById('content');
+	var div = content.getElementsByTagName('div');
+
+	for (var i = 0; i < li.length; i++){
+		li[i].index = i;
+		li[i].onclick = function(){
+			for (var i = 0; i < li.length; i++) {
+				li[i].className = '';
+				div[i].style.display = 'none';
+			};
+
+			this.className = 'current';
+			div[this.index].style.display = 'block';
+		}
+	}
+</script>
+</body>
+</html>

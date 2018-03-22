@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单图轮播</title>
+	<script src="jquery-1.11.3.min.js"></script>
+	<link rel="stylesheet" href="slider.css">
+	<script src="jquery-w/jquery.w.js"></script>
+	<style type="text/css">
+	.list{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		font-size: 13px;
+		color: #fff;
+		width: 500px;
+		margin: 50px auto;
+	}
+	.list li{
+		float: left;
+		width: 100px;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		background: #333;
+		cursor: pointer;
+
+		
+	}
+	.list li ul{
+		display: none;
+	}
+	</style>
+</head>
+<body>
+	<div class="warp">
+		<ul>
+			<li><img src="1.jpg" alt="111111111"></li>
+			<li><img src="2.jpg" alt="222222222"></li>
+			<li><img src="3.jpg" alt="333333333"></li>
+			<li><img src="4.jpg" alt="444444444"></li>
+		</ul>
+		<ol>
+			<li class="current">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ol>
+		<p class="introduce">111sdf1111</p>
+	</div>
+
+	<br>
+	<ul class="list">
+		<li>
+			导航列表
+			<ul class="nav">
+				<li>二级导航1</li>
+				<li>二级导航1</li>
+				<li>二级导航1</li>
+				<li>二级导航1</li>
+				<li>二级导航1</li>
+			</ul>
+		</li>
+		<li>
+			导航列表
+			<ul class="nav">
+				<li>二级导航2</li>
+				<li>二级导航2</li>
+				<li>二级导航2</li>
+			</ul>
+		</li>
+		<li>
+			导航列表
+			<ul class="nav">
+				<li>二级导航3</li>
+				<li>二级导航3</li>
+				<li>二级导航3</li>
+				<li>二级导航3</li>
+				<li>二级导航3</li>
+			</ul>
+		</li>
+		<li>
+			导航列表
+			<ul class="nav">
+				<li>二级导航4</li>
+			</ul>
+		</li>
+		<li>导航列表</li>
+	</ul>
+
+<script type="text/javascript">
+	$(function(){
+		// $('.list').eq(0).nav();
+		$('.list').hover(function(){
+			$(this).fadeOut();
+		},function(){
+			$(this).fadeIn();
+		});
+	});
+</script>
+
+
+
+<style type="text/css">
+	table{
+
+	}
+	.evenRow{background: #38a38a}
+	.oddRow{background: #09f}
+	.currentRow{background: yellow}
+</style>
+<script type="text/javascript">
+	$(function(){
+		// $('table').table({
+		// 	evenRowClass: 'evenRow', //偶数行样式
+		// 	oddRowClass: 'oddRow', // 奇数行样式
+		// 	currentRowClass: 'currentRow' // 当前行样式
+		// });
+	});
+</script>
+<h2>自定义插件实现，隔行变色</h2>
+<table>
+	<tr>
+		<th>姓名</th>
+		<th>年龄</th>
+		<th>身高</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td>2</td>
+		<td>3</td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+	.tabNav li{
+		float: left;
+		width: 150px;
+		height: 26px;
+		line-height: 26px;
+		text-align: center;
+		margin-right: 3px;
+		border:1px solid #abcdef;
+		border-bottom: none;
+		cursor: pointer;
+	}
+	.tabContent{
+		clear: both;
+	}
+	.tabContent div{
+		border: 1px solid #abcdef;
+		display: none;
+		width: 500px;
+		height: 200px;
+	}
+	.tabNav li.current{
+		background: #abcdef;
+		color: #fff;
+		font-weight: 700;
+	}
+</style>
+<script type="text/javascript">
+	$(function(){
+		// $('.tab').tab({'eventType':'mouseover'});
+
+		$.preload();
+	})
+</script>
+<div class="tab">
+	<ul class="tabNav">
+		<li class="current">1 </li>
+		<li>2 </li>
+		<li>3 </li>
+	</ul>
+	<div class="tabContent">
+		<div style="display:block;">11111111111</div>
+		<div>22222222222</div>
+		<div>33333333333</div>
+	</div>
+</div>
+</body>
+</html>

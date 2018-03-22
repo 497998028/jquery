@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+	<link rel="stylesheet" href="zoom.css">
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="zoom.js"></script>
+</head>
+<body>
+<input type="text" value="">
+	<div class="zoom">
+		<div class="zoomMiddle">
+			<img src="1.jpg" alt="">
+			<div class="mask"></div>
+		</div>
+
+		<div class="zoomSmall">
+			<span class="left disable">&lt;</span>
+			<div class="wrapSallImg">
+				<ul>
+					<li class="current"><img src="1.jpg" alt=""></li>
+					<li><img src="2.jpg" alt=""></li>
+					<li><img src="3.jpg" alt=""></li>
+					<li><img src="4.jpg" alt=""></li>
+					<li><img src="5.jpg" alt=""></li>
+					<li><img src="6.jpg" alt=""></li>
+				</ul>
+			</div>
+			<span class="right">&gt;</span>
+		</div>
+
+		<div class="zoomLarge" style="display:none;"><img src="1.jpg" alt=""></div>
+	</div>
+	
+</body>
+</html>

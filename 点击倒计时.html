@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>点击倒计时demo</title>
+	<style type="text/css">
+	#action{
+		display: block;
+		width: 90px;
+		margin: 50px auto;
+		padding: 6px 10px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		background-color: #569bf6;
+		color: #fff;
+		text-decoration: none;
+	}
+	</style>
+	<script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<a id="action" href="javascript:;">获取验证码</a>
+<p>
+	以下代码不理想的地方是，
+	我想重置 “秒的值” ；但却必须重置所有文本，还必须每次重置背景色。<br>
+	理想的情况下是：点击改变文本和背景，并且只定时改变内部的数字；数字到 0 在还原内容和背景色。
+</p>
+<script type="text/javascript">
+$(function(){
+    $('#action').click(function(){
+        if($(this).html() != '获取验证码'){
+            return false;
+        }
+        countDown($('#action'));
+        /*
+        var mobile = $('input[name=mobile]').val();
+        $.post("{:U('getSMSCode')}",{'mobile':mobile},function(data){
+            if (!data.code) {
+                countDown($('#action'));
+            }else{
+                alert('发送失败');
+            }
+        },'json');*/
+    });
+
+    // 倒计时器
+    function countDown(obj){
+        var intDiff = parseInt(6);//倒计时总秒速
+        var count = setInterval(function(){
+            if (intDiff <= 0) {
+                obj.html('获取验证码').css('background','#569bf6');;
+                clearInterval(count);
+            }else{
+                obj.html('获取成功('+intDiff+')').css('background','#ccc');
+                intDiff--;
+            }
+        },1000);
+    }
+});
+</script>
+</body>
+</html>

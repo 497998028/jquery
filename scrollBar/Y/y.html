@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Y轴滚动条限制</title>
+	<link rel="stylesheet" href="y.css">
+	<script src="../jquery-1.11.3.min.js"></script>
+	<script src="y.js"></script>
+	<script src="jquery.mousewheel.js"></script>
+</head>
+<body>
+<input type="text">
+	<div class="outerContent">
+		<div class="innerContent">
+			<p style="width:100px">
+				static：
+				    无特殊定位，对象遵循正常文档流。top，right，bottom，left等属性不会被应用。
+				relative：
+				    对象遵循正常文档流，但将依据top，right，bottom，left等属性在正常文档流中偏移位置。
+				absolute：
+				    对象脱离正常文档流，使用top，right，bottom，left等属性进行绝对定位。而其层叠通过z-index属性定义。
+				fixed：
+				    对象脱离正常文档流，使用top，right，bottom，left等属性以窗口为参考点进行定位，当出现滚动条时，对象不会随着滚动。IE6及以下不支持此参数值
+			</p>
+		</div>
+	</div>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+</body>
+</html>

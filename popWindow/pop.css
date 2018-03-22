@@ -1,0 +1,52 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+a{
+	list-style-type: none;
+}
+body{
+	/*height: 900px;*/
+	/*width: 2000px;*/
+}
+.popWindow{
+	width: 300px;
+	height: 300px;
+	background: #abcdef;
+	padding: 2px;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	/*border: 2px solid #abcdef;*/
+}
+.hide{
+	display: none;
+}
+.popWindow h3{
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+}
+.popWindow h3 span{
+	float: right;
+	font-size: 14px;
+	font-weight: normal;
+	cursor: pointer;
+}
+..popWindow h3 span:hover{
+	color: #f00;
+}
+.popWindow .content{
+	height: 270px;
+	background: #fff;
+}
+.mask{
+	background: #000;
+	opacity: 0.4;
+/*	width: 200px;
+	height: 200px;*/
+	position: absolute;
+	left: 0;
+	top: 0;
+}

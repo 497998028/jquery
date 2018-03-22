@@ -1,0 +1,62 @@
+/**
+ *======================================================================================================
+ * 幻灯片相关样式 
+ */
+.w-slide{
+	position: relative;
+	overflow: hidden;
+}
+.w-slide ul{
+	width: 2000px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.w-slide ul li{
+	float: left;
+	width: 500px;
+}
+.w-slide ol{
+	position: absolute;
+	bottom: 10px;
+	right: 50%;
+	list-style-type: none;
+}
+.w-slide ol li{
+	float: left;
+	width: 10px;
+	height: 10px;
+	background: #fff;
+	border-radius: 50%;
+	margin: 3px;
+	cursor: pointer;
+}
+.w-slide ol li.current{
+	background: #fe6500;
+}
+.w-slide-prev{
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	width: 26px;
+	height: 50px;
+	background: url(./img/arrow-left.png) #000 50% no-repeat;
+	border-radius: 3px;
+	opacity: 0.1;
+}
+.w-slide-next{
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	width: 26px;
+	height: 50px;
+	background: url(./img/arrow-right.png) #000 50% no-repeat;
+	border-radius: 3px;
+	opacity: 0.1;
+}
+
+

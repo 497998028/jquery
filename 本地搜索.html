@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>本地当前页面搜索</title>
+	<script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>姓名</th>
+			<th>性别</th>
+			<th>职位</th>
+		</tr>
+		<tr>
+			<td>张三</td>
+			<td>男</td>
+			<td>顾客</td>
+		</tr>
+		<tr>
+			<td>王五</td>
+			<td>男</td>
+			<td>顾客</td>
+		</tr>
+		<tr>
+			<td>小倩</td>
+			<td>女</td>
+			<td>客服</td>
+		</tr>
+	</table>
+	<input type="text" />
+	<input type="button" value="搜索" />
+
+<script type="text/javascript">
+	// 按钮点击事件
+	$('input[type=button]').click(function(){
+		// 获取文本域的值
+		var text = $('input[type=text]').val();
+		// （排出第一行tr）隐藏，后显示包含 text变量内容的 tr行
+		$('table tr:not(":first")').hide().filter(':contains("'+text+'")').show();
+	});
+	
+</script>
+</body>
+</html>

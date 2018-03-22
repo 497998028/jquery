@@ -1,0 +1,17 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+li{
+	list-style-type: none;
+}
+body{
+	margin: 50px;
+}
+a{
+	text-decoration: none;
+	color: #f00;
+}
+h3{
+	cursor: pointer;
+}

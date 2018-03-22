@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>drag</title>
+	<link rel="stylesheet" href="drag.css">
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="drag.js"></script>
+	<style type="text/css">
+		.weixin{
+			width: 66px;
+			height:60px;
+			background-color:#000;
+			position: fixed;
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="inner"></div>
+	</div>
+
+	<div class="weixin">
+		
+	</div>
+
+
+<script type="text/javascript">
+$(function(){
+
+	// 鼠标按下，窗口跟着移动
+	$('.weixin').mousedown(function(e){				// 鼠标按下
+		var positionDiv = $(this).offset();			// 获取div与浏览器left 和top 的距离
+		var distenceX = e.pageX - positionDiv.left;	// 获取鼠标与元素left的距离
+		var distenceY = e.pageY - positionDiv.top;	// 获取鼠标与元素top的距离
+		console.log(positionDiv);
+
+		$(document).mousemove(function(e){			// 鼠标移动
+			var x = e.pageX - distenceX;			// 获取元素距窗口left的距离：鼠标与文档的距离 - 鼠标与元素的距离
+			var y = e.pageY - distenceY;			// 获取元素距窗口top的距离：同上
+			// 禁止元素被移除窗口外
+			if(x < 0){														// 元素距离文档小于0 就等于 0
+				x = 0;
+			}else if(x > $(document).width() - $('div.weixin').outerWidth(true)){	// 元素距离文档最大值 就等于最大值
+				x = $(document).width() - $('div.weixin').outerWidth(true);
+			}
+			if (y < 0) {
+				y = 0;
+			}else if(y > $(document).height() - $('div.weixin').outerHeight(true)){
+				y = $(document).height() - $('div.weixin').outerHeight(true);
+			}
+			// 执行写入
+			$('div.weixin').css({
+				'left':x,
+				'top':y,
+			});
+		});
+
+		// 鼠标松开解除事件
+		$(document).mouseup(function(){			// 鼠标抬起
+			$(document).off('mousemove');		//解除事件
+		});
+	});
+});
+</script>
+</body>
+</html>

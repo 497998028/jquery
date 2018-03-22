@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>窗口关闭</title>
+	<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<style>
+.mn-pro-wrap{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	color: #fff;
+	font-weight: 700;
+	border-radius: 4px;
+	background-color: #666;
+	border-color: #666;
+	box-shadow: 0 0 7px #666;
+}
+.mn-pro-wrap .close{
+	position: absolute;
+	right: -7px;
+	top: -7px;
+	width: 14px;
+	line-height: 14px;
+	background: #222;
+	border: 2px solid #fff;
+	border-radius: 100%;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+}
+.mn-pro-wrap .content{
+	max-width: 200px;
+	padding: 5px 0 5px 10px;
+}
+.mn-pro-wrap .content p{
+	margin: 0;
+	padding: 0;
+}
+.mn-pro-wrap .pra{
+	position: absolute;
+	bottom: 1px;
+	left: 1px;
+	height: 1px;
+	background-color: #222;
+	border-radius: 0 4px 0 4px;
+}
+</style>
+</head>
+<body>
+	
+	<div class="mn-pro-wrap">
+		<span class="close">×</span>
+		<div class="content">
+			<p>
+				我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是我是
+			</p>
+			<div class="pra"></div>
+		</div>
+	</div>
+
+
+
+<script>
+$(function(){
+	// 进度条
+	var len = 100;
+	var pra = $('.mn-pro-wrap .pra');
+	var mnTimer = setInterval(function(){
+		if (len <= 0) {
+			clearInterval(mnTimer);
+			$('.mn-pro-wrap').css('display','none');
+		}else{
+			len--;
+			pra.css('width',len+'%');
+		};
+	},50);
+
+	// 点击关闭
+	$('.mn-pro-wrap .close').click(function(){
+		$('.mn-pro-wrap').css('display','none');
+	});
+});
+</script>
+</body>
+</html>

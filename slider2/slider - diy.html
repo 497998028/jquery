@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单图轮播</title>
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="jquery-w/jquery.w.js"></script>
+	<link rel="stylesheet" href="jquery-w/jquery.w.css">
+	<style type="text/css">
+		body{
+			margin: 50px;
+		}
+		.warp{
+			width: 500px;
+			height: 350px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="warp">
+		<ul>
+			<li><img src="1.jpg" alt="111111111"></li>
+			<li><img src="2.jpg" alt="222222222"></li>
+			<li><img src="3.jpg" alt="333333333"></li>
+			<li><img src="4.jpg" alt="444444444"></li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+	$(function(){
+		$('.warp').wSlide({
+			'speed': 500,
+			'millisec':1500,
+			'isIndicator': true, // 是否显示指示器
+			'isTab': true, // 是否显示标签
+		});
+	});
+	</script>
+</body>
+</html>

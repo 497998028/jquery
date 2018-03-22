@@ -1,0 +1,34 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+.outerContent{
+	width: 300px;
+	height: 498px;
+	border: 1px solid #fc0;
+	float: left;
+	position: relative;
+	overflow: hidden;
+}
+.innerContent{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.outer{
+	width: 30px;
+	height: 500px;
+	background: teal;
+	position: relative;
+	margin: 5% 40%;
+}
+.inner{
+	width: 30px;
+	height: 30px;
+	background: #f00;
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
